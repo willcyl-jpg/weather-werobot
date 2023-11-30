@@ -1,0 +1,18 @@
+[Unit]
+Description=Weather Application
+After=syslog.target
+
+[Service]
+User=bitanswer
+WorkingDirectory=/home/bitanswer/pkgs
+ExecStart=/home/bitanswer/pkgs/weather_manage.sh start
+ExecStop=/home/bitanswer/pkgs/weather_manage.sh stop
+SuccessExitStatus=143
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=bit-weather-app
+
+[Install]
+WantedBy=multi-user.target

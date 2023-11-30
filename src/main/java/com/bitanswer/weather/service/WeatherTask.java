@@ -14,7 +14,7 @@ public class WeatherTask {
       this.weatherService = weatherService;
    }
 
-   @Scheduled(cron = "0 0 7 * * ?")
+   @Scheduled(cron = "0 0 6 * * ?", zone = "Asia/Shanghai")
    public void dailyCall() {
       weatherService.sendWeatherToRobot();
    }

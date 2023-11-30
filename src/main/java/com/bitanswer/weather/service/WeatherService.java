@@ -3,7 +3,6 @@ package com.bitanswer.weather.service;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URI;
 import java.net.URLConnection;
 import java.nio.charset.StandardCharsets;
 import java.util.zip.GZIPInputStream;
@@ -11,13 +10,7 @@ import java.util.zip.GZIPInputStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponents;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -61,7 +54,7 @@ public class WeatherService {
          RobotContent robotContent = new RobotContent();
          robotContent.setMsgType("text");
          robotContent.setText(robotContentText);
-         sendMessage(robotContent);
+         RobotSender.sendTo(robotUri, robotContent);
       } catch (Exception e) {
          LOG.error("Something wrong...", e);
       }
@@ -88,16 +81,5 @@ public class WeatherService {
          inputStreamReader.close();
          bufferedReader.close();
       }
-   }
-
-   private void sendMessage(RobotContent content) throws Exception {
-      RestTemplate restTemplate = new RestTemplateBuilder().build();
-      HttpHeaders httpHeaders = new HttpHeaders();
-      httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
-      String body = OBJECT_MAPPER.writeValueAsString(content);
-      HttpEntity<String> entity = new HttpEntity<>(body, httpHeaders);
-      URI uri = URI.create(robotUri);
-      ResponseEntity<String> responseEntity = restTemplate.postForEntity(uri, entity, String.class);
-      LOG.info(responseEntity.toString());
    }
 }
