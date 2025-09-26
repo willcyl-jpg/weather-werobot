@@ -1,4 +1,4 @@
-package com.bitanswer.weather;
+package com.will.weather;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.bitanswer.weather.middleware.WeatherMessage;
-import com.bitanswer.weather.service.WeatherService;
+import com.will.weather.middleware.WeatherMessage;
+import com.will.weather.service.WeatherService;
 
 @SpringBootTest
 class WeatherApplicationTests {

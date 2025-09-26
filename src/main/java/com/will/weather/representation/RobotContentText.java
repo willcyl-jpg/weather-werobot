@@ -1,4 +1,4 @@
-package com.bitanswer.weather.representation;
+package com.will.weather.representation;
 
 import lombok.Data;
 

@@ -1,4 +1,4 @@
-package com.bitanswer.weather.service;
+package com.will.weather.service;
 
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -19,9 +19,9 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.bitanswer.weather.middleware.WeatherMessage;
-import com.bitanswer.weather.representation.RobotContent;
-import com.bitanswer.weather.representation.RobotContentText;
+import com.will.weather.middleware.WeatherMessage;
+import com.will.weather.representation.RobotContent;
+import com.will.weather.representation.RobotContentText;
 
 @Service
 public class WeatherService {

@@ -1,4 +1,4 @@
-package com.bitanswer.weather.middleware;
+package com.will.weather.middleware;
 
 import java.util.HashMap;
 import java.util.Map;

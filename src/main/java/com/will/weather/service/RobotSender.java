@@ -1,4 +1,4 @@
-package com.bitanswer.weather.service;
+package com.will.weather.service;
 
 import java.net.URI;
 
@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.bitanswer.weather.representation.RobotContent;
+import com.will.weather.representation.RobotContent;
 
 public class RobotSender {
 

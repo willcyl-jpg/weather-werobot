@@ -1,4 +1,4 @@
-package com.bitanswer.weather.service;
+package com.will.weather.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,6 +16,6 @@ public class WeatherTask {
 
    @Scheduled(cron = "0 0 6 * * ?", zone = "Asia/Shanghai")
    public void dailyCall() {
-      weatherService.sendWeatherToRobot();
+      // weatherService.sendWeatherToRobot();
    }
 }

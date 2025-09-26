@@ -1,4 +1,4 @@
-package com.bitanswer.weather.service;
+package com.will.weather.service;
 
 import java.util.Map;
 
@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import com.bitanswer.weather.representation.RobotContent;
+import com.will.weather.representation.RobotContent;
 
 @Service
 public class CallbackService {
@@ -31,7 +31,7 @@ public class CallbackService {
          String body = OBJECT_MAPPER.writerWithDefaultPrettyPrinter().writeValueAsString(bodies);
          LOG.info(header);
          LOG.info(body);
-         RobotSender.sendTo(callbackRobotUri, new RobotContent("Callback response: Header: \n" + header + "\n" + "Body: \n" + body));
+         RobotSender.sendTo(callbackRobotUri, new RobotContent("Callback response: Headers: \n" + header + "\n" + "Body: \n" + body));
       } catch (Exception e) {
          LOG.error("Serialize callback fail", e);
       }
